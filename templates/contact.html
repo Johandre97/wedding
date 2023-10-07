@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/gijgo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slicknav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flash_messages.css') }}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -67,6 +68,25 @@
 </header>
 <!--/ header-->
 
+<!-- Flash Messages -->
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <div class="flash flash-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endwith %}
+</div>
+
 <!-- bradcam_area  -->
 <div class="bradcam_area text-center slider_bg_1 overlay3">
     <div class="bradcam_text">
@@ -79,7 +99,7 @@
     <section class="contact-section">
             <div class="container">
                 <div class="d-none d-sm-block mb-5 pb-4">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1977.7750638762323!2d27.142256!3d-26.392613!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDIzJzM0LjIiUyAyN8KwMDgnMzIuNSJF!5e1!3m2!1sen!2sza!4v1696447643397!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>   
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1977.7750638762323!2d27.142256!3d-26.392613!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDIzJzM0LjIiUyAyN8KwMDgnMzIuNSJF!5e1!3m2!1sen!2sza!4v1696447643397!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -142,7 +162,7 @@
             </div>
         </section>
     <!-- ================ contact section end ================= -->
-    
+
  <!-- footer_start -->
  <footer class="footer">
     <div class="footer_top">
@@ -178,7 +198,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
 </footer>
 <!-- footer_end -->
-        
+
     <!-- JS here -->
     <script src="{{ url_for('static', filename='assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -206,10 +226,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ url_for('static', filename='assets/js/jquery.form.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/jquery.validate.min.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/mail-script.js') }}"></script>
-    
+
     <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
 
-    
+
     </body>
-    
+
     </html>
