@@ -2211,6 +2211,15 @@ h3 {
   font-size: 16px;
   margin-bottom: 0;
   font-size: 16px;
+  font-family: "Muli", sans-serif;
+  color: #2a2a2a;
+}
+
+.contact-info .media-body p {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Muli", sans-serif;
   color: #2a2a2a;
 }
 
@@ -2320,6 +2329,7 @@ h3 {
 /* line 133, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_contact.scss */
 .contact-section {
   padding: 130px 0 100px;
+  font-family: "Muli", sans-serif;
 }
 
 @media (max-width: 991px) {
@@ -5334,3 +5344,6 @@ h6 {
   height: 100%;
 }
 
+.text-plain {
+  font-family: "Muli", sans-serif !important; 
+}
