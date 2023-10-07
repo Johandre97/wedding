@@ -1,0 +1,18 @@
+/* flash_messages.css */
+.flash {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Muli", sans-serif;
+}
+
+.flash-success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.flash-error {
+    background-color: #f44336;
+    color: white;
+}

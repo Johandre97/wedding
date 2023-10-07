@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/gijgo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slicknav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flash_messages.css') }}">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}"> -->
 </head>
 
@@ -66,6 +67,25 @@
         </div>
     </header>
     <!--/ header-->
+
+    <!-- Flash Messages -->
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="flash-messages">
+                            {% for message in messages %}
+                                <div class="flash flash-success">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
 
     <!-- slider_area -->
     <div class="slider_area ">
@@ -132,7 +152,7 @@
                                 14:30
                             </span>
                             <h3>Wedding Ceremony</h3>
-                            <p>Our wedding ceremony will be held amidst tall trees in the afternoon. 
+                            <p>Our wedding ceremony will be held amidst tall trees in the afternoon.
                                 Join us as we exchange vows and celebrate our love with family and friends.</p>
                                 <br>
 
@@ -147,7 +167,7 @@
                                 16:30
                             </span>
                             <h3>Canapés</h3>
-                            <p>Relish a delightful assortment of savory and sweet canapés as you mingle and celebrate with us. 
+                            <p>Relish a delightful assortment of savory and sweet canapés as you mingle and celebrate with us.
                                 Our carefully curated selection of bites offers a variety of flavors to tantalize your taste buds.</p>
                             <img src="../static/assets/img/program_details/ornaments.png" alt="">
                         </div>
@@ -160,7 +180,7 @@
                                 19:00
                             </span>
                             <h3>Main Course</h3>
-                            <p>As you savor the evening with us, relish in a delightful main course that complements the joy 
+                            <p>As you savor the evening with us, relish in a delightful main course that complements the joy
                                 and celebration of our special day.</p>
                                 <br>
                                 <br>
@@ -193,24 +213,24 @@
                                             <h3>Are You Attending?</h3>
                                             <p>Kindly respond before 30 August</p>
                                         </div>
-                                        <form action="#">
+                                        <form action="{{ url_for('rsvp') }}" method="POST">
                                             <div class="row">
                                                 <div class="col-xl-12">
-                                                    <input type="text" placeholder="Your Name" required>
+                                                    <input type="text" placeholder="Your Name" name="name" required>
                                                 </div>
                                                 <div class="col-xl-12">
-                                                    <input type="email" placeholder="Email" required>
+                                                    <input type="email" placeholder="Email" name="email" required>
                                                 </div>
                                                 <div class="col-xl-12">
-                                                    <select class="form-select wide" id="default-select" class="">
-                                                        <option data-display="1 Guest">1 Guest</option>
-                                                        <option value="1">2 Guest</option>
-                                                        <option value="2">3 Guest</option>
-                                                        <option value="3">4 Guest</option>
+                                                    <select class="form-select wide" id="default-select" name="guests_count">
+                                                        <option value="1" selected>1 Guest</option>
+                                                        <option value="2">2 Guests</option>
+                                                        <option value="3">3 Guests</option>
+                                                        <option value="4">4 Guests</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-xl-12">
-                                                    <textarea placeholder="Additional Message"></textarea>
+                                                    <textarea placeholder="Additional Message" name="message"></textarea>
                                                 </div>
                                                 <div class="col-xl-12">
                                                     <button type="submit" class="boxed_btn3">R.S.V.P</button>
