@@ -78,7 +78,6 @@ def rsvp():
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
-        guests_count = request.form['guests_count']
         message = request.form['message']
 
         try:
@@ -89,23 +88,35 @@ def rsvp():
                 flash('You have already reserved with this email address.', 'danger')
                 return redirect(url_for('index'))
 
-            # If the guest is not found, create a new guest record
-            new_guest = Guest(name=name, email=email,
-                              guests_count=guests_count, message=message)
+            # Create a new guest record for the main guest
+            main_guest = Guest(name=name, email=email, guests_count=1, message=message)
 
-            # Add the new guest to the session and commit the transaction
-            db.session.add(new_guest)
+            # Add the main guest to the session
+            db.session.add(main_guest)
+
+            # Collect guest information for guests 2 to numGuests
+            for i in range(2, 5):  # Assuming a maximum of 4 guests, adjust as needed
+                guest_name = request.form.get(f'guest_name_{i}')
+                guest_email = request.form.get(f'guest_email_{i}')
+                guest_message = request.form.get(f'guest_message_{i}')
+                if guest_name and guest_email:
+                    guest_record = Guest(
+                        name=guest_name,
+                        email=guest_email,
+                        guests_count=1,
+                        message=guest_message
+                    )
+                    db.session.add(guest_record)
+
             db.session.commit()
 
             flash('Thank you for your reservation!', 'success')
             return redirect(url_for('index'))
 
         except Exception as e:
-            flash(
-                'An error occurred while processing your reservation. Please try again later.', 'danger')
+            flash('An error occurred while processing your reservation. Please try again later.', 'danger')
             print(f"Error occurred: {str(e)}")
             return redirect(url_for('index'))
-
 # Contact form route
 
 

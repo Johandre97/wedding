@@ -222,7 +222,7 @@
                                                     <input type="email" placeholder="Email" name="email" required>
                                                 </div>
                                                 <div class="col-xl-12">
-                                                    <select class="form-select wide" id="default-select" name="guests_count">
+                                                    <select class="form-select wide nice-select" id="guests_count" name="guests_count">
                                                         <option value="1" selected>1 Guest</option>
                                                         <option value="2">2 Guests</option>
                                                         <option value="3">3 Guests</option>
@@ -232,6 +232,8 @@
                                                 <div class="col-xl-12">
                                                     <textarea placeholder="Additional Message" name="message"></textarea>
                                                 </div>
+                                                <!-- Container for guest input fields -->
+                                                <div id="guestsContainer"></div>
                                                 <div class="col-xl-12">
                                                     <button type="submit" class="boxed_btn3">R.S.V.P</button>
                                                 </div>
@@ -343,11 +345,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ url_for('static', filename='assets/js/plugins.js') }}"></script>
 
     <!--contact js-->
-    <script src="{{ url_for('static', filename='assets/js/contact.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/jquery.ajaxchimp.min.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/jquery.form.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/jquery.validate.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='assets/js/mail-script.js') }}"></script>
 
     <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
 
@@ -359,6 +359,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             ));
         });
     </script>
+
+<!-- Add this JavaScript code to your HTML -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='assets/js/attending.js') }}"></script>
+
 
 </body>
 
