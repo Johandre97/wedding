@@ -23,6 +23,43 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/gijgo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slicknav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+
+    <style>
+        .accommodation-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-content h4 {
+    font-size: 18px;
+}
+
+.card-content p:last-child {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+    </style>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -47,8 +84,8 @@
                         <div class="col-xl-9 col-lg-9">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
-                                    <ul>
-                                        <li><a href="index">Home</a></li>
+                                    <ul id="navigation">
+                                        <li><a href="index">home</a></li>
                                         <li><a href="story">Our Story</a></li>
                                         <li><a href="gallery">Gallery</a></li>
                                         <li><a class="active" href="Accommodation">Accommodation</a></li>
@@ -97,35 +134,167 @@
     <!-- accommodation_area  -->
     <div class="accommodation_area">
         <div class="container">
-                <div class="row">
-                        <div class="col-xl-8 offset-xl-2">
-                            <div class="section_title text-center">
-                                <h3>Accommodation.  For.  Guest</h3>
-                                <p>Many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here content here, making it look like readable English. Many desktop publishing packages and web page editors now use.</p>
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2">
+                    <div class="section_title text-center">
+                        <h3>Guest Accommodation</h3>
+                        <p>Discover the perfect place to rest and rejuvenate during your visit to Potchefstroom, North-West. </p>
+                        <p>Our carefully curated selection of recommended accommodations offers a diverse range of options to suit every traveler's preferences. </p>
+                        <p>Whether you're seeking a cozy bed and breakfast or a charming guesthouse, you'll find the ideal retreat to complement your stay. </p>
+                        <p>Explore our handpicked accommodations and make your trip to Potchefstroom unforgettable.</p> 
+                    </div>
+                </div>
+                <!-- Turffontein Farm -->
+                <div class="accommodation-card">
+                    <div class="row no-gutters">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAgS27dcVrPKra0Kiy78gBLtyaIZdU0MZvwOwfbE47tN72QuG67H?fit=crop&auto=enhance,format,compress&q=80&w=1600&ar=1:1" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA0Ia8F7sTYBpHIcdtU6hFHlJtfze6EBvlTfATcj9LcYfQfSC1W2?fit=crop&auto=enhance,format,compress&q=80&w=720&ar=1:1" alt="">
                             </div>
                         </div>
                     </div>
-            <div class="row no-gutters">
-                <div class="col-xl-12 col-lg-12">
-                    <div class="accommondation_image">
-                        <img src="../static/assets/img/Accommodation/1.png" alt="">
+                    <div class="row no-gutters">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAcsj8bYFLCAVD9fuFovZYGwpxLs8gA3nnZd5g87Ig43zJvtaKho?w=1280&fit=crop&auto=enhance,format,compress&q=80" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAANIBpuR4HM9kNEMw95xk6QZqtiGDqK9S2yU8foZYN3YarmEgEeV?w=1280&fit=crop&auto=enhance,format,compress&q=80" alt="">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-6 col-md-6">
-                    <div class="accommondation_image">
-                        <img src="../static/assets/img/Accommodation/2.png" alt="">
+                    <br>
+                    <div class="card-content text-center">
+                        <h3>Turffontein Farm</h3>
+                        <p>Turffontein Farm is a 2500 ha-farm about 20 km from Potchefstroom.</p>
+                        <h4>Price:</h4>
+                        <p>Starting at R2,100 per night for 6 people</p>
+                        <a class="boxed_btn3" href="https://www.lekkeslaap.co.za/akkommodasie/turffontein-farm" target="_blank">More information</a>
                     </div>
-                </div>
-                <div class="col-xl-6 col-md-6">
-                    <div class="accommondation_image">
-                        <img src="../static/assets/img/Accommodation/3.png" alt="">
+                </div>   
+                <br>
+                <!-- Anderland - De Oude melkstal -->
+                <div class="accommodation-card">
+                    <div class="row no-gutters">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAngUq7PkCOpD0liqOahgfOjZ3eTiCTOFZTMHgqqm2ZExkZXjAPg?fit=crop&auto=enhance,format,compress&q=80&w=1600&ar=1:1" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAkBpJPf8j4hiV1D8qf9gTjfMff8cveZT0KpdFw23cK3OArRVnZl?w=2400&fit=crop&auto=enhance,format,compress&q=80&ar=1:1" alt="">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <div class="row no-gutters">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAxMq6sk3cOqiqoykWnhyFCI4GvhAKTGG4pl2S5dvIxAHN7YgVFf?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAlqsTbqZursjdhx5Ht6QAQ8ZXzc8FwqS4PdIbyfMOVqXhrcJJqC?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card-content text-center">
+                        <h3>Anderland - De Oude Melkstal</h3>
+                        <p>"Anderland - De Oude Melkstal" is situated on a beautiful farm along the banks of the Mooirivier in Potchefstroom. There are plenty of hiking trails, historical monuments, and natural parks to explore.</p>
+                        <h4>Price:</h4>
+                        <p>Starting at R950 per night for 2 people</p>
+                        <a class="boxed_btn3" href="https://www.lekkeslaap.co.za/akkommodasie/anderland---de-oude-melkstal" target="_blank">More information</a>
+                    </div>
+                </div> 
+                <br>
+                <!-- Droombos Plaashuis -->
+                <div class="accommodation-card">
+                    <div class="row no-gutters">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAef8a1d42d2e0c75b55862156b3707ef1e029d62b1a2eb915098863d377fd5e41e6a6fe10b738c6361949aa41c5b67bcad7e0?fit=crop&auto=enhance,format,compress&q=80&w=1600&ar=1:1" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA7a3fc34413fe1fac62c64969f011fbb07ce112f61576eead0cff830cc25f47dd835dae3925a6fc4d472c0c818cfc1fb3c65e?w=2400&fit=crop&auto=enhance,format,compress&q=80&w=1600&ar=1:1" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA8b67981cccb15d63bb7d76db2834926a0f495d8d7ebcfef4a6670bc174fb8161ffd8f0fe2f588e546f6b95273765e5147455?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA759a0879956c7e63797520f6c2301e88ad5d6c4131cc3395cc3cab7990d9d59d906b201445e277e311e65c18b7c3be8579c9?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card-content text-center">
+                        <h3>Droombos Plaashuis</h3>
+                        <p>"Droombos Plaashuis" is a lovely house on a farm located 29 km outside of Potchefstroom. The house accommodates 8 people and is an ideal getaway from the hustle and bustle of the city.</p>
+                        <h4>Price:</h4>
+                        <p>Starting at R2,100 per night for 8 people</p>
+                        <a class="boxed_btn3" href="https://www.lekkeslaap.co.za/akkommodasie/droombos-plaashuis" target="_blank">More information</a>
+                    </div>
+                </div> 
+                <br>
+                <!-- Province Guesthouse -->
+                <div class="accommodation-card">
+                    <div class="row no-gutters">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA8FXF5hhNzsziQTdFChUM63KFbunQlQKXoMYxs8KKp0Y3SyPvFu?fit=crop&auto=enhance,format,compress&q=80&w=1600&ar=1:1" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAv457GY1Y4YnZECAfeilLmbJm0C0bMRFjjO5No6VbVPaPVON906?w=2400&fit=crop&auto=enhance,format,compress&q=80&ar=1:1" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAABc8RTaI2Q0120hF1TUqPyrnuLzeyfTRbZRD5cNRAB9bzZ6vNPY?w=2400&fit=crop&auto=enhance,format,compress&q=80&ar=1:1" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="accommondation_image">
+                                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAEzS7XhCCTvMrAIOXwROTLyuPmdQYGgX6cedPWuFTjcnlmFaqpH?w=2400&fit=crop&auto=enhance,format,compress&q=80&ar=1:1" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card-content text-center">
+                        <h3>Province Guesthouse</h3>
+                        <p>"Provence Guest House" is located just 7 km outside of Potchefstroom on the R501 in the direction of Carletonville. The farm offers a peaceful atmosphere with large gardens.
+                            The guest house features 2 tastefully decorated rooms with a double bed or 2 single beds. Each room has an en-suite bathroom.</p>
+                        <h4>Price:</h4>
+                        <p>Starting at R650 per night for 2 people</p>
+                        <a class="boxed_btn3" href="https://www.lekkeslaap.co.za/akkommodasie/provence-guest-house" target="_blank">More information</a>
+                    </div>
+                </div> 
+                <br>                
+            </div>                
         </div>
     </div>
     <!--/ accommodation_area  -->
 
+    <br>
 
     <!-- attend_area -->
     <div class="attending_area">
@@ -245,8 +414,8 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | JHDigitalCreations | Adapted from a template by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                 </div>
@@ -278,11 +447,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ url_for('static', filename='assets/js/plugins.js') }}"></script>
 
     <!--contact js-->
-    <script src="{{ url_for('static', filename='assets/js/contact.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/jquery.ajaxchimp.min.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/jquery.form.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/jquery.validate.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='assets/js/mail-script.js') }}"></script>
 
     <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
 
